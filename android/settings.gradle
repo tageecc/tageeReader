@@ -1,0 +1,3 @@
+rootProject.name = 'tageeReader'
+
+include ':app'
