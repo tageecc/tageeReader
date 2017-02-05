@@ -6,25 +6,24 @@ import {
     Image,
     ListView,
     TouchableOpacity,
-    LayoutAnimation,
 } from 'react-native';
 
 export default class MainList extends React.Component {
+
+
+    _dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     constructor(props) {
         super(props);
         this.state = {
             tab: 1,
-            dataSource: this.genRows(),
+            dataSource: this.genRows()
         };
-
-        LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
 
     }
 
     genRows() {
-        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        let dataList = this.state.tab == 1 ? [
+        let dataList = !(this.state && this.state.tab == 1) ? [
             {
                 "title": "圣墟",
                 "author": "辰东 著",
@@ -87,7 +86,7 @@ export default class MainList extends React.Component {
                 "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
             },
         ];
-        return ds.cloneWithRows(dataList);
+        return this._dataSource.cloneWithRows(dataList);
 
     }
 
@@ -112,7 +111,7 @@ export default class MainList extends React.Component {
                 <View style={[styles.tab,styles.row]}>
                     <TouchableOpacity
                         onPress={() => {
-                            this.setState({tab:1,dataSource: this.genRows(1)});
+                            this.setState({tab:1,dataSource: this.genRows()});
                         }}
                     >
                         <Text
@@ -120,14 +119,17 @@ export default class MainList extends React.Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => {
-                            this.setState({tab:2,dataSource: this.genRows(2)});
+                            this.setState({tab:2,dataSource: this.genRows()});
                         }}
                     >
                         <Text
                             style={[styles.tab_tit,styles.tab_tit2,this.state.tab==2 && styles.tab_tit_cur]}>已读完</Text>
                     </TouchableOpacity>
-
                 </View>
+                <ListView style={styles.list}
+                          dataSource={this.state.dataSource}
+                          renderRow={this.renderRow}
+                />
                 <ListView style={styles.list}
                           dataSource={this.state.dataSource}
                           renderRow={this.renderRow}

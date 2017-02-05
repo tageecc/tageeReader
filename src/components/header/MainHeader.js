@@ -6,12 +6,11 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 export  default class MainHeader extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Icon name="menu" style={styles.icon}/>
+                <Icon name="menu" style={styles.icon} onPress={this.props.toggleMenu}/>
                 <Text style={styles.title}>{this.props.title}</Text>
                 <Icon name="plus" style={styles.icon}/>
             </View>
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
         alignItems: 'center',
-        height: 48
+        height: 48,
     },
     icon: {
         fontSize: 26,
