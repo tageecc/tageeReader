@@ -100,5 +100,15 @@ export default class tageeReader extends React.Component {
                 <MainList/>
             </View>
         }
+        if (key === 'ARTICLE') {
+
+            let str='';
+
+            return <View>
+                <Text>
+
+                </Text>
+            </View>
+        }
     }
 }

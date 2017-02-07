@@ -92,7 +92,13 @@ export default class MainList extends React.Component {
 
     renderRow(rowData, sectionID, rowID) {
         return (
-            <View elevation={1} style={[styles.list_item,styles.row]}>
+            <TouchableOpacity
+                elevation={1}
+                style={[styles.list_item,styles.row]}
+                onPress={() => {
+
+                        }}
+            >
                 <Image style={styles.cover} source={{uri:rowData.cover}}/>
                 <View>
                     <View style={[styles.info,styles.row]}>
@@ -101,7 +107,8 @@ export default class MainList extends React.Component {
                     </View>
                     <Text style={styles.introduction}>{rowData.introduction}</Text>
                 </View>
-            </View>
+
+            </TouchableOpacity>
         );
     }
 
@@ -126,10 +133,6 @@ export default class MainList extends React.Component {
                             style={[styles.tab_tit,styles.tab_tit2,this.state.tab==2 && styles.tab_tit_cur]}>已读完</Text>
                     </TouchableOpacity>
                 </View>
-                <ListView style={styles.list}
-                          dataSource={this.state.dataSource}
-                          renderRow={this.renderRow}
-                />
                 <ListView style={styles.list}
                           dataSource={this.state.dataSource}
                           renderRow={this.renderRow}
