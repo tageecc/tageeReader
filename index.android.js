@@ -7,6 +7,6 @@
 import React from 'react';
 import RN from 'react-native';
 
-import main from './src/main';
+import app from './src/app';
 
-RN.AppRegistry.registerComponent('tageeReader', () => main);
+RN.AppRegistry.registerComponent('tageeReader', () => app);

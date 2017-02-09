@@ -13,6 +13,7 @@ import MainHeader from './components/header/MainHeader';
 import MainList from './components/MainList/index';
 import SideMenu from 'react-native-side-menu';
 import Menu from './components/Menu/index';
+import Reader from './pages/Reader/index';
 
 const {
     Header: NavigationHeader,
@@ -81,7 +82,7 @@ export default class tageeReader extends React.Component {
                 <MainHeader
                     title="首页"
                     toggleMenu={this.toggleMenu.bind(this)}/>
-                <MainList/>
+                <MainList  onMenuItemSelected={this.onMenuItemSelected.bind(this)}/>
             </View>
         }
         if (key === 'ABOUT') {
@@ -89,7 +90,7 @@ export default class tageeReader extends React.Component {
                 <MainHeader
                     title="首页"
                     toggleMenu={this.toggleMenu.bind(this)}/>
-                <MainList/>
+                <MainList  onMenuItemSelected={this.onMenuItemSelected.bind(this)}/>
             </View>
         }
         if (key === 'FEEDBACK') {
@@ -97,18 +98,12 @@ export default class tageeReader extends React.Component {
                 <MainHeader
                     title="首页"
                     toggleMenu={this.toggleMenu.bind(this)}/>
-                <MainList/>
+                <MainList  onMenuItemSelected={this.onMenuItemSelected.bind(this)}/>
             </View>
         }
-        if (key === 'ARTICLE') {
+        if (key === 'READER') {
 
-            let str='';
-
-            return <View>
-                <Text>
-
-                </Text>
-            </View>
+            return <Reader />
         }
     }
 }

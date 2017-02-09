@@ -23,69 +23,71 @@ export default class MainList extends React.Component {
     }
 
     genRows() {
-        let dataList = !(this.state && this.state.tab == 1) ? [
-            {
-                "title": "圣墟",
-                "author": "辰东 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
-                "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
-            },
-            {
-                "title": "圣墟",
-                "author": "辰东 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
-                "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
-            },
-            {
-                "title": "圣墟",
-                "author": "辰东 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
-                "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
-            },
-            {
-                "title": "圣墟",
-                "author": "辰东 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
-                "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
-            },
-            {
-                "title": "圣墟",
-                "author": "辰东 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
-                "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
-            },
-            {
-                "title": "圣墟",
-                "author": "辰东 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
-                "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
-            },
-        ] : [
-            {
-                "title": "龙珠之最强神话",
-                "author": "枫叶缀 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
-                "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
-            },
-            {
-                "title": "龙珠之最强神话",
-                "author": "枫叶缀 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
-                "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
-            },
-            {
-                "title": "龙珠之最强神话",
-                "author": "枫叶缀 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
-                "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
-            },
-            {
-                "title": "龙珠之最强神话",
-                "author": "枫叶缀 著",
-                "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
-                "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
-            },
-        ];
+        let dataList = !(this.state && this.state.tab == 1) ?
+            [
+                {
+                    "title": "圣墟",
+                    "author": "辰东 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
+                    "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
+                },
+                {
+                    "title": "圣墟",
+                    "author": "辰东 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
+                    "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
+                },
+                {
+                    "title": "圣墟",
+                    "author": "辰东 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
+                    "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
+                },
+                {
+                    "title": "圣墟",
+                    "author": "辰东 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
+                    "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
+                },
+                {
+                    "title": "圣墟",
+                    "author": "辰东 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
+                    "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
+                },
+                {
+                    "title": "圣墟",
+                    "author": "辰东 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004608738/180",
+                    "introduction": "在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……在破败中崛起，在寂灭中复苏。沧海成尘，雷电枯竭……"
+                },
+            ] :
+            [
+                {
+                    "title": "龙珠之最强神话",
+                    "author": "枫叶缀 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
+                    "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
+                },
+                {
+                    "title": "龙珠之最强神话",
+                    "author": "枫叶缀 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
+                    "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
+                },
+                {
+                    "title": "龙珠之最强神话",
+                    "author": "枫叶缀 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
+                    "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
+                },
+                {
+                    "title": "龙珠之最强神话",
+                    "author": "枫叶缀 著",
+                    "cover": "http://qidian.qpic.cn/qdbimg/349573/1004607972/180",
+                    "introduction": "夏亚，重生到龙珠世界成为了一名赛亚人。这一世，他的父母战死，他被赛亚人夫妇收养，还有个不知道是不是拖油瓶的妹妹，而这时距离贝吉塔星毁灭只剩下12年。"
+                },
+            ];
         return this._dataSource.cloneWithRows(dataList);
 
     }
@@ -95,9 +97,7 @@ export default class MainList extends React.Component {
             <TouchableOpacity
                 elevation={1}
                 style={[styles.list_item,styles.row]}
-                onPress={() => {
-
-                        }}
+                onPress={() => { this.props.onMenuItemSelected('READER') }}
             >
                 <Image style={styles.cover} source={{uri:rowData.cover}}/>
                 <View>
