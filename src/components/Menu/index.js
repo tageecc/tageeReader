@@ -12,15 +12,15 @@ export default class  Menu extends React.Component {
     render() {
         return (
             <ScrollView style={ styles.scrollView }>
-                <TouchableHighlight underlayColor="#eee" onPress={() => {this.props.onMenuItemSelected('HOME')}}>
+                <TouchableHighlight underlayColor="#eee" onPress={() => {}}>
                     <Text style={styles.item}>书架</Text>
                 </TouchableHighlight>
 
-                <TouchableHighlight underlayColor="#eee" onPress={() => {this.props.onMenuItemSelected('ABOUT')}}>
+                <TouchableHighlight underlayColor="#eee" onPress={() => {}}>
                     <Text style={styles.item}>关于</Text>
                 </TouchableHighlight>
 
-                <TouchableHighlight underlayColor="#eee" onPress={() => {this.props.onMenuItemSelected('FEEDBACK')}}>
+                <TouchableHighlight underlayColor="#eee" onPress={() => {}}>
                     <Text style={styles.item}>反馈</Text>
                 </TouchableHighlight>
                 <TouchableHighlight underlayColor="#eee" onPress={() => {}}>

@@ -1,6 +1,6 @@
 'use strict';
-import React, {Navigator} from 'react-native';
-
+import React  from 'react';
+import {Navigator, Platform, BackAndroid} from 'react-native';
 
 // Pages
 import ShelfPage from '../pages/Shelf';
@@ -15,7 +15,18 @@ const customFloatFromRight = sceneConfig.customFloatFromRight;
 
 class Router {
     constructor(navigator) {
-        this.navigator = navigator
+        this.navigator = navigator;
+        if (Platform.OS === 'android') {
+            BackAndroid.addEventListener('hardwareBackPress', ()=> {
+                const routesList = this.navigator.getCurrentRoutes();
+                const currentRoute = routesList[routesList.length - 1];
+                if (currentRoute.name !== 'shelf-page') {
+                    navigator.pop();
+                    return true;
+                }
+                return false;
+            });
+        }
     }
 
     push(props, route) {
@@ -27,6 +38,7 @@ class Router {
     }
 
     pop() {
+        console.log('pop');
         this.navigator.pop()
     }
 
@@ -47,20 +59,6 @@ class Router {
             sceneConfig: customFloatFromRight
         })
     }
-
-    replaceWithHome() {
-        this.navigator.popToTop()
-    }
-
-    resetToLogin() {
-        this.navigator.resetTo({
-            name: 'login-page',
-            page: LoginPage,
-            //sceneConfig: customFloatFromRight,
-        })
-    }
-
-
 }
 
 module.exports = Router;

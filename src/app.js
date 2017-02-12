@@ -1,26 +1,19 @@
-'use strict';
-
-import React, { Component } from 'react-native';
+import React from 'react';
 import { Provider } from 'react-redux';
-
-import configureStore from './store/index';
-
-let store = configureStore();
-
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import * as reducers from './reducers';
 import Root from './root';
 
+//apply thunk
+const createStoreWithThunk = applyMiddleware(thunk)(createStore);
+const reducer = combineReducers(reducers);
+const store = createStoreWithThunk(reducer);
 
-export default class App extends Component{
-    constructor(){
-        super();
-        this.state = {
-            isLoading: true,
-            store: configureStore(()=>{this.setState({isLoading: false})})
-        }
-    }
+export default class App extends React.Component{
     render(){
         return (
-            <Provider store={this.state.store}>
+            <Provider store={store}>
                 <Root />
             </Provider>
         )

@@ -13,21 +13,14 @@ import MainList from '../../components/MainList/index';
 import SideMenu from 'react-native-side-menu';
 import Menu from '../../components/Menu/index';
 
-export default class tageeReader extends React.Component {
+export default class ShelfPage extends React.Component {
 
     constructor(props) {
+
         super(props);
         this.state = {
             isOpen: false,
-            key: 'HOME'
         };
-    }
-
-    onMenuItemSelected(key) {
-        this.setState({
-            isOpen: false,
-            key: key
-        })
     }
 
     toggleMenu() {
@@ -41,20 +34,19 @@ export default class tageeReader extends React.Component {
             isOpen: isOpen
         })
     }
-
     render() {
 
         return (
             <SideMenu
                 isOpen={this.state.isOpen}
                 disableGestures={false}
-                menu={<Menu onMenuItemSelected={this.onMenuItemSelected.bind(this)} />}
+                menu={<Menu/>}
             >
                 <View>
                     <MainHeader
                         title="首页"
                         toggleMenu={this.toggleMenu.bind(this)}/>
-                    <MainList onMenuItemSelected={this.onMenuItemSelected.bind(this)}/>
+                    <MainList router={this.props.router}/>
                 </View>
             </SideMenu>
         );

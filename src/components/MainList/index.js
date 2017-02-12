@@ -97,7 +97,7 @@ export default class MainList extends React.Component {
             <TouchableOpacity
                 elevation={1}
                 style={[styles.list_item,styles.row]}
-                onPress={() => { this.props.onMenuItemSelected('READER') }}
+                onPress={() => { this.props.router.toReader()}}
             >
                 <Image style={styles.cover} source={{uri:rowData.cover}}/>
                 <View>
@@ -135,7 +135,7 @@ export default class MainList extends React.Component {
                 </View>
                 <ListView style={styles.list}
                           dataSource={this.state.dataSource}
-                          renderRow={this.renderRow}
+                          renderRow={this.renderRow.bind(this)}
                 />
             </View>
         );

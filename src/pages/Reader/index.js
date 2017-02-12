@@ -8,7 +8,7 @@ import {
 
 import parseContent from './parseContent';
 
-export default class Reader extends React.Component {
+export default class ReaderPage extends React.Component {
 
     constructor(props) {
         super(props);
