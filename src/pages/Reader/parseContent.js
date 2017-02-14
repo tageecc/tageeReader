@@ -1,5 +1,3 @@
-//@flow
-import stringWidth from './stringWidth';
 
 export default function parseContent(str, width, cleanEmptyLine = true) {
     if (!str || str == '' || typeof(str) != 'string') {
@@ -43,7 +41,7 @@ export default function parseContent(str, width, cleanEmptyLine = true) {
     return lines;
 }
 
-function cleanContent(str:string){
+function cleanContent(str){
     let lines = str.split('\n');
     let newlines = [];
     for (let i in lines) {
