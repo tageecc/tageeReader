@@ -8,13 +8,13 @@ import {Dimensions} from 'react-native';
  * @param lineHeight
  * @returns {number}
  */
-export function pageWidth({fontSize, lineHeight}) {
+export function perPageCount({fontSize, lineHeight}) {
     let {height, width} = Dimensions.get('window');
     let lineWidth = Math.floor((width - fontSize * 2) / fontSize);//每行字数
     let liens = Math.floor((height - fontSize * 2) / lineHeight);//每页行数
     return lineWidth * liens;
 }
-export function pageContent({content, pageWidth, index = 1}) {
+export function parseContent({content, pageWidth, index = 1}) {
     if (!content || content == '' || typeof(content) != 'string') {
         return [];
     }
